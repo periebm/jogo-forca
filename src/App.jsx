@@ -15,10 +15,11 @@ const forca_img = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
 function App() {
   const [split_palavra, setWord] = useState([]);
+  const [word_to_discover, setWordGame] = useState([]);
   const [btn_disable, setDisable] = useState(alfabeto)
   const [image_game, setImg] = useState(forca_img[0]);
-  const [game_over, setGameOver] = useState(false);
-
+  const [game_over, setGameCondition] = useState(false);
+  const [error_count, setError] = useState(0);
   return (
     <div className="general">
       <Jogo
@@ -26,9 +27,16 @@ function App() {
         split_palavra={split_palavra}
         setWord={setWord} setDisable={setDisable}
         game_over={game_over}
-        forca_img={forca_img} 
+        forca_img={forca_img}
+        setImg={setImg} 
+        forca_start_img ={forca0}
         image_game={image_game}
         alfabeto={alfabeto}
+        word_to_discover={word_to_discover}
+        setWordGame = {setWordGame}
+        setGameCondition={setGameCondition}
+        setError = {setError}
+        error_count = {error_count}
 
         />
 
@@ -37,10 +45,14 @@ function App() {
         btn_disable={btn_disable}
         setDisable={setDisable}
         alfabeto={alfabeto}
-
         forca_img={forca_img}
         setImg={setImg} 
-        setGameOver={setGameOver}/>
+        setGameCondition={setGameCondition}
+        word_to_discover={word_to_discover}
+        split_palavra={split_palavra}
+        setError = {setError}
+        game_over={game_over}
+        />
 
     </div>
   )
