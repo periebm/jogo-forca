@@ -1,7 +1,7 @@
 //(conjunto de botões com as letras)
 let error_in = 0;
 
-export default function Letras({btn_disable, setDisable, alfabeto,setImg,forca_img, setGameCondition, word_to_discover, split_palavra, game_over}) {
+export default function Letras({btn_disable, setDisable, alfabeto,setImg,forca_img,setWordGame, setGameCondition, word_to_discover, split_palavra, game_over}) {
     
     function clicked(letra){
         setDisable([...btn_disable, letra])
@@ -27,6 +27,7 @@ export default function Letras({btn_disable, setDisable, alfabeto,setImg,forca_i
             setGameCondition("lost");
             setDisable(alfabeto);
             setImg(forca_img[6]);
+            setWordGame(split_palavra);
         }
         console.log(error_in);
     }

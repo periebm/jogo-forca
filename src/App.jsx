@@ -52,6 +52,7 @@ function App() {
         split_palavra={split_palavra}
         setError = {setError}
         game_over={game_over}
+        setWordGame = {setWordGame}
         />
 
     </div>
