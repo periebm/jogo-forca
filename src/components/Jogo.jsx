@@ -1,5 +1,4 @@
 //(imagem da forca, botão de iniciar, palavra do jogo)
-import { isDisabled } from "@testing-library/user-event/dist/utils";
 import forca0 from "../assets/forca0.png";
 export default function Jogo({ palavras }) {
     return (
