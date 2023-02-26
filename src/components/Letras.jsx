@@ -1,11 +1,23 @@
 //(conjunto de botões com as letras)
-const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+let error_count = 0;
+export default function Letras({btn_disable, setDisable, alfabeto,setImg,forca_img, setGameOver}) {
 
-export default function Letras({btn_disable, setDisable}) {
+    function clicked(letra){
+        setDisable([...btn_disable, letra])
+        console.log(btn_disable);
+        error_count++;
+        console.log(error_count)
+        setImg(forca_img[error_count]);
+        if(error_count >= 6){
+            setGameOver(true);
+            setDisable(alfabeto);
+        }
+    }
+
     return (
         <>
             <div className="alfabeto">
-                {alfabeto.map((l) => <button data-test="letter" key={l} disabled={btn_disable}>{l.toUpperCase()}</button>)}
+                {alfabeto.map((l) => <button data-test="letter" key={l} onClick={()=> clicked(l)} disabled={btn_disable.includes(l)}>{l.toUpperCase()}</button>)}
             </div>
         </>
     )
