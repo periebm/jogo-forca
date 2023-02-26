@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .right span{
@@ -53,6 +54,9 @@ body {
     font-family: 'Encode Sans', sans-serif;
 }
 
+.hide{
+    display: none;
+}
 
 
 .alfabeto{
@@ -86,4 +90,13 @@ body {
     color: #7AA7C7;
     border-radius: 3px;
     border: 1px solid #7AA7C7;
+}
+
+.right ul {
+    display: flex;
+}
+
+.right li{
+    margin-left: 4px;
+    margin-right: 4px;
 }
