@@ -6,7 +6,7 @@ import Jogo from "./components/Jogo"
 function App() {
   return (
     <div className="general">
-      <Jogo />
+      <Jogo palavras={palavras}/>
       <Letras />
     </div>
   )
